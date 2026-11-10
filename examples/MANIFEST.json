@@ -1,0 +1,37 @@
+{
+  "checked_date": "2026-11-10 Europe/Paris",
+  "python": "3.13.5",
+  "runtime_packages": {
+    "huggingface_hub": "1.33.0",
+    "transformers": "5.22.2",
+    "datasets": "5.2.0",
+    "gradio": "6.31.0"
+  },
+  "models": [
+    {
+      "output": "qwen-h100.json",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "parameter_source": "config formula"
+    },
+    {
+      "output": "mistral-a100.json",
+      "model_id": "mistralai/Mistral-7B-v0.1",
+      "revision": "27d67f1b5f57dc0953326b2601d68371d40ea8da",
+      "parameter_source": "config formula"
+    },
+    {
+      "output": "smollm2-rtx4090.json",
+      "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "parameter_source": "config formula"
+    },
+    {
+      "output": "smollm2-safetensors.json",
+      "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "parameter_source": "safetensors headers"
+    }
+  ],
+  "scope": "config-only analysis, no GPU inference or weights loaded"
+}

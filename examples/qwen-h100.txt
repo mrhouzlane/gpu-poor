@@ -1,0 +1,9 @@
+THEORETICAL UPPER BOUNDS under idealized assumptions, NOT measured throughput. Costs are optimistic floors at those rates, not a serving quote. Quantization is weight storage only; BF16 compute roofline, BF16 KV by default.
+Qwen/Qwen2.5-7B-Instruct: 7,615,616,512 parameters (config formula)
+H100 SXM; bf16 weights; bf16 KV; 57,344 KV bytes/token; context=4,096
+Prices: archived research data, NOT a live index; 2026-11-03; on demand; USD/GPU hour 2.25 / 3.345 / 4.841
+batch | fits | max ctx/seq | tok/s/seq ceiling | total tok/s ceiling | $/M out low / median / high floor
+--------------------------------------------------------------------------------------------------------
+    1 | yes  |      32,768 |            216.60 |              216.60 | 2.8855 / 4.2897 / 6.2082
+    8 | yes  |      32,768 |            195.79 |             1566.31 | 0.3990 / 0.5932 / 0.8585
+   32 | yes  |      30,936 |            147.27 |             4712.62 | 0.1326 / 0.1972 / 0.2853

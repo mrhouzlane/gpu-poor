@@ -1,0 +1,13 @@
+{
+  "is_example": false,
+  "source_path": "data/raw/2026-11-03.json",
+  "upstream": "https://huggingface.co/datasets/gpurentalprices/gpu-rental-prices",
+  "snapshot_date": "2026-11-03",
+  "generated_at": "2026-11-03T09:48:29.348+01:00",
+  "time_zone": "Europe/Paris",
+  "sha256": "ed3ee8522109abf0f4ec2036de5227bb01a736db53db5ff7ef6a5859f4ca97d9",
+  "license": "CC-BY-4.0",
+  "official_hourly_index": false,
+  "aggregation": "min/median/max of provider medians, exact SKU, fresh only, single GPU minimum",
+  "checked_date": "2026-11-10"
+}

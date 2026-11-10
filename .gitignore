@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+*.egg-info/
+.hf-cache/
+docs/REPORT.md
+docs/STUDY.md
+docs/ISSUES.md
+examples/gradio-server.log
+examples/test-results.txt
+.gradio/

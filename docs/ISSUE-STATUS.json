@@ -1,0 +1,31 @@
+{
+  "verified_at": "2026-11-10T11:52:18.708413+01:00",
+  "time_zone": "Europe/Paris",
+  "method": "GitHub connector search and issue/comment reads",
+  "issues": [
+    {
+      "url": "https://github.com/huggingface/datasets/issues/2794",
+      "title": "Warnings and documentation about pickling incorrect",
+      "state": "open",
+      "assignees": [],
+      "effort": "45\u201390 minutes",
+      "feasibility": "warning wording still present in installed Datasets 5.2.0"
+    },
+    {
+      "url": "https://github.com/huggingface/datasets/issues/3488",
+      "title": "URL query parameters are set as path in the compression hop for fsspec",
+      "state": "open",
+      "assignees": [],
+      "effort": "2\u20134 hours",
+      "feasibility": "offline reproduction with mocked compression detection in installed Datasets 5.2.0"
+    },
+    {
+      "url": "https://github.com/huggingface/datasets/issues/5324",
+      "title": "Fix docstrings and types in documentation that appears on the website",
+      "state": "open",
+      "assignees": [],
+      "effort": "45\u201390 minutes for one docstring slice",
+      "caveat": "prior volunteer claims exist in discussion; check overlapping PRs"
+    }
+  ]
+}

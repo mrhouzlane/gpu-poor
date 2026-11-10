@@ -1,0 +1,3 @@
+# Hugging Face CPU Gradio Space installation; Gradio comes from README sdk_version.
+# No torch, model weights, CUDA, paid compute, or ZeroGPU are needed.
+.

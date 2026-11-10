@@ -1,0 +1,9 @@
+{
+  "datasets_version": "5.2.0",
+  "issue": "https://github.com/huggingface/datasets/issues/3488",
+  "offline": true,
+  "compression_detection_mocked": "gzip",
+  "input": "https://example.org/uc?export=download&id=123",
+  "actual": "gzip://uc?export=download&id=123::https://example.org/uc?export=download&id=123",
+  "expected_property": "The synthetic inner path must not include HTTP query parameters; the outer URL must retain them."
+}

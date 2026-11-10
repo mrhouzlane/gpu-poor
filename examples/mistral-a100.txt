@@ -1,0 +1,10 @@
+THEORETICAL UPPER BOUNDS under idealized assumptions, NOT measured throughput. Costs are optimistic floors at those rates, not a serving quote. Quantization is weight storage only; BF16 compute roofline, BF16 KV by default.
+mistralai/Mistral-7B-v0.1: 7,241,732,096 parameters (config formula)
+A100 80GB SXM; bf16 weights; bf16 KV; 131,072 KV bytes/token; context=4,096
+Prices: archived research data, NOT a live index; 2026-11-03; on demand; USD/GPU hour 1.38 / 1.8 / 3.92808
+Note: full-context KV used; sliding attention eviction is not modeled.
+batch | fits | max ctx/seq | tok/s/seq ceiling | total tok/s ceiling | $/M out low / median / high floor
+--------------------------------------------------------------------------------------------------------
+    1 | yes  |      32,768 |            135.75 |              135.75 | 2.8238 / 3.6833 / 8.0379
+    8 | yes  |      32,768 |            108.58 |              868.66 | 0.4413 / 0.5756 / 1.2561
+   32 | yes  |      13,713 |             64.40 |             2060.68 | 0.1860 / 0.2426 / 0.5295

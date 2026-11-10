@@ -1,0 +1,259 @@
+{
+  "named_endpoints": {
+    "/estimate": {
+      "parameters": [
+        {
+          "label": "Hugging Face model id",
+          "parameter_name": "model_id",
+          "parameter_has_default": true,
+          "parameter_default": "Qwen/Qwen2.5-7B-Instruct",
+          "type": {
+            "type": "string"
+          },
+          "python_type": {
+            "type": "str",
+            "description": ""
+          },
+          "component": "Textbox",
+          "example_input": "Hello!!"
+        },
+        {
+          "label": "Single GPU",
+          "parameter_name": "gpu_key",
+          "parameter_has_default": true,
+          "parameter_default": "H100",
+          "type": {
+            "type": "string",
+            "enum": [
+              "H100",
+              "H200",
+              "A100",
+              "L40S",
+              "RTX4090",
+              "MI300X"
+            ]
+          },
+          "python_type": {
+            "type": "Literal['H100', 'H200', 'A100', 'L40S', 'RTX4090', 'MI300X']",
+            "description": ""
+          },
+          "component": "Dropdown",
+          "example_input": "H100"
+        },
+        {
+          "label": "Weight storage dtype (compute stays BF16)",
+          "parameter_name": "dtype",
+          "parameter_has_default": true,
+          "parameter_default": "bf16",
+          "type": {
+            "type": "string",
+            "enum": [
+              "bf16",
+              "fp8",
+              "int4"
+            ]
+          },
+          "python_type": {
+            "type": "Literal['bf16', 'fp8', 'int4']",
+            "description": ""
+          },
+          "component": "Dropdown",
+          "example_input": "bf16"
+        },
+        {
+          "label": "Batch sizes",
+          "parameter_name": "batches",
+          "parameter_has_default": true,
+          "parameter_default": "1,8,32",
+          "type": {
+            "type": "string"
+          },
+          "python_type": {
+            "type": "str",
+            "description": ""
+          },
+          "component": "Textbox",
+          "example_input": "Hello!!"
+        },
+        {
+          "label": "Resident context tokens per sequence",
+          "parameter_name": "context",
+          "parameter_has_default": true,
+          "parameter_default": 4096,
+          "type": {
+            "type": "integer"
+          },
+          "python_type": {
+            "type": "int",
+            "description": ""
+          },
+          "component": "Number",
+          "example_input": 1
+        },
+        {
+          "label": "GPU memory fraction for weights + KV",
+          "parameter_name": "memory_fraction",
+          "parameter_has_default": true,
+          "parameter_default": 0.9,
+          "type": {
+            "type": "number",
+            "description": "numeric value between 0.1 and 1.0"
+          },
+          "python_type": {
+            "type": "float",
+            "description": ""
+          },
+          "component": "Slider",
+          "example_input": 0.1
+        },
+        {
+          "label": "Optional price CSV or Parquet",
+          "parameter_name": "price_file",
+          "parameter_has_default": false,
+          "parameter_default": null,
+          "type": {
+            "$defs": {
+              "FileDataMeta": {
+                "properties": {
+                  "_type": {
+                    "const": "gradio.FileData",
+                    "title": "Type",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "_type"
+                ],
+                "title": "FileDataMeta",
+                "type": "object"
+              }
+            },
+            "properties": {
+              "path": {
+                "title": "Path",
+                "type": "string"
+              },
+              "url": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Url"
+              },
+              "size": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Size"
+              },
+              "orig_name": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Orig Name"
+              },
+              "mime_type": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Mime Type"
+              },
+              "is_stream": {
+                "default": false,
+                "title": "Is Stream",
+                "type": "boolean"
+              },
+              "meta": {
+                "$ref": "#/$defs/FileDataMeta"
+              }
+            },
+            "required": [
+              "path"
+            ],
+            "title": "FileData",
+            "type": "object",
+            "additional_description": "The FileData class is a subclass of the GradioModel class that represents a file object within a Gradio interface. It is used to store file data and metadata when a file is uploaded.\n\nAttributes:\n    path: The server file path where the file is stored.\n    url: The normalized server URL pointing to the file.\n    size: The size of the file in bytes.\n    orig_name: The original filename before upload.\n    mime_type: The MIME type of the file.\n    is_stream: Indicates whether the file is a stream.\n    meta: Additional metadata used internally (should not be changed)."
+          },
+          "python_type": {
+            "type": "filepath",
+            "description": "The FileData class is a subclass of the GradioModel class that represents a file object within a Gradio interface. It is used to store file data and metadata when a file is uploaded.\n\nAttributes:\n    path: The server file path where the file is stored.\n    url: The normalized server URL pointing to the file.\n    size: The size of the file in bytes.\n    orig_name: The original filename before upload.\n    mime_type: The MIME type of the file.\n    is_stream: Indicates whether the file is a stream.\n    meta: Additional metadata used internally (should not be changed)."
+          },
+          "component": "File",
+          "example_input": {
+            "path": "https://github.com/gradio-app/gradio/raw/main/test/test_files/sample_file.pdf",
+            "meta": {
+              "_type": "gradio.FileData"
+            },
+            "orig_name": "sample_file.pdf",
+            "url": "https://github.com/gradio-app/gradio/raw/main/test/test_files/sample_file.pdf"
+          }
+        },
+        {
+          "label": "Include dated rental cost range",
+          "parameter_name": "include_prices",
+          "parameter_has_default": true,
+          "parameter_default": true,
+          "type": {
+            "type": "boolean"
+          },
+          "python_type": {
+            "type": "bool",
+            "description": ""
+          },
+          "component": "Checkbox",
+          "example_input": true
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_17",
+          "type": {
+            "type": "string"
+          },
+          "python_type": {
+            "type": "str",
+            "description": ""
+          },
+          "component": "Markdown"
+        },
+        {
+          "label": "Assumptions and full results",
+          "type": {
+            "type": {},
+            "description": "any valid json"
+          },
+          "python_type": {
+            "type": "str | float | bool | list | dict",
+            "description": "any valid json"
+          },
+          "component": "Json"
+        }
+      ],
+      "description": "The same library powers the app and CLI."
+    }
+  },
+  "unnamed_endpoints": {}
+}
