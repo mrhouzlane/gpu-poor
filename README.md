@@ -13,6 +13,8 @@ license: mit
 
 # gpu-poor
 
+**Try it in your browser:** [huggingface.co/spaces/newway14/gpu-poor](https://huggingface.co/spaces/newway14/gpu-poor)
+
 **GPU-poor and proud.** What does serving this model cost before downloading its weights?
 
 A small Python library, CLI and CPU-only Gradio demo connecting Hugging Face model
